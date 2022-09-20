@@ -119,6 +119,10 @@ def home():
 
 @app.route("/login_page", methods=['GET', 'POST'])
 def login():
+    if request.method == "POST":
+        email = request.form.get("email")
+        # return redirect(f"/success/{email}")
+        redirect(f"/email_verify/{email}")
     return render_template('login.html')
 
 @app.route('/email_verify/<email>')

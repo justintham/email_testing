@@ -17,10 +17,10 @@
   <body>
     <div class="header">
       <nav>
-			  <span class="logo"><a href="{{ url_for('predict_page') }}">Heart Disease Test</a></span>
-        <ul class="nav-links">
-          <li><a href="{{ url_for('about_us') }}">About Us</a></li>
-          <li><a href="{{ url_for('graph_page') }}">Graph</a></li>
+			  <span class="logo"><a href="{{ url_for('predict_page',email = email) }}">Heart Disease Test</a></span>
+			  <ul class="nav-links">
+				<li><a href="{{url_for('about_us',email = email) }}">About Us</a></li>
+				<li><a href="{{ url_for('graph_page',email = email) }}">Graph</a></li>
           <li class="btn"> <a href="{{ url_for('home') }}">Log Out</a> </li>
         </ul>
       </nav>
@@ -34,6 +34,7 @@
  
         <p class="faq-text">
           <img src="../static/images/age.jpg" class="center" >
+          <br>
           Age is the length of time that a person has lived 
         </p>
  
@@ -49,6 +50,7 @@
         </h3>
         <p class="faq-text">
           <img src="../static/images/chest_pain_type.jpg" class="center">
+          <br>
           Chest discomfort that related to a heart problem. It may be caused by lifting heavy weights, anxiety, heartburn, and others. 
         </p>
         <button class="faq-toggle">
@@ -63,6 +65,7 @@
         </h3>
         <p class="faq-text">
           <img src="../static/images/cholestoral.jpg" class="center">
+          <br>
           Fats substance that made in liver and found in the blood and in cells of the body. 
         </p>
         <button class="faq-toggle">
@@ -77,6 +80,7 @@
         </h3>
         <p class="faq-text">
           <img src="../static/images/exercise_induced_angina.jpg" class="center">
+          <br>
           Exercise-induced angina (AP) is a common complaint of cardiac patients, particularly when exercising in the cold.
         </p>
         <button class="faq-toggle">
@@ -91,6 +95,7 @@
         </h3>
         <p class="faq-text">
           <img src="../static/images/fasting_blood_sugar.jpg" class="center">
+          <br>
           Total of sugar (glucose) in a blood sample after an overnight test. The normal fasting blood sugar level can be less than 100mg/dL
         </p>
         <button class="faq-toggle">
@@ -105,6 +110,7 @@
         </h3>
         <p class="faq-text">
           <img src="../static/images/Max_heart_rate.jpg" class="center">
+          <br>
           A common formula for calculating maximum heart rate is: MHR = 208 – 0.7 (age) Maximum heart rate, or MHR, is a dynamic process that measures the cumulative number of ventricular contractions or beats per minute in which blood reciprocally flows to and from the heart.
         </p>
         <button class="faq-toggle">
@@ -119,6 +125,7 @@
         </h3>
         <p class="faq-text">
           <img src="../static/images/oldpeak.jpg" class="center">
+          <br>
           St depression induced by exercise relative to rest 
         </p>
         <button class="faq-toggle">
@@ -133,6 +140,7 @@
         </h3>
         <p class="faq-text">
           <img src="../static/images/rest_ecg.jpg" class="center">
+          <br>
           The resting ECG can detect certain heart conditions such as hypertrophy of heart, ischemia, myocardial infarction, sequelae of myocardial infarction, cardiac arrhythmias, etc.
 
         </p>
@@ -148,6 +156,7 @@
         </h3>
         <p class="faq-text">
           <img src="../static/images/resting_blood_pressure.jpg" class="center">
+          <br>
           Resting blood pressure is when heart is rest, between beats that blood pressure falls 
         </p>
         <button class="faq-toggle">
@@ -162,6 +171,7 @@
         </h3>
         <p class="faq-text">
           <img src="../static/images/sex.jpg" class="center">
+          <br>
           Sex is gender identity
         </p>
         <button class="faq-toggle">
@@ -176,6 +186,7 @@
         </h3>
         <p class="faq-text">
           <img src="../static/images/slope.jpg" class="center">
+          <br>
           The slope of the peak exercise ST segment 
         </p>
         <button class="faq-toggle">
@@ -190,6 +201,7 @@
         </h3>
         <p class="faq-text">
           <img src="../static/images/thalassemia.jpg" class="center">
+          <br>
           An inherited blood disorder characterized by the formation of abnormal form of hemoglobin. It causes tiredness, yellowish skin, dark urine, abdominal swelling and facial bone deformities.
         </p>
         <button class="faq-toggle">
@@ -204,6 +216,7 @@
         </h3>
         <p class="faq-text">
           <img src="../static/images/vessels_colored_by_flourosopy.jpg" class="center">
+          <br>
           Number of vessels colored by flourosopy 
         </p>
         <button class="faq-toggle">

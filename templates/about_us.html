@@ -11,10 +11,10 @@
   <body>
     <div class="header">
 			<nav>
-			  <span class="logo"><a href="{{ url_for('predict_page') }}">Heart Disease Test</a></span>
+			  <span class="logo"><a href="{{ url_for('predict_page',email = email) }}">Heart Disease Test</a></span>
 			  <ul class="nav-links">
-				<li><a href="{{ url_for('about_us') }}">About Us</a></li>
-				<li><a href="{{ url_for('graph_page') }}">Graph</a></li>
+				<li><a href="{{url_for('about_us',email = email) }}">About Us</a></li>
+				<li><a href="{{ url_for('graph_page',email = email) }}">Graph</a></li>
 				<li class="btn"><a href="{{ url_for('home') }}">Log Out</a></li>
 			  </ul>
 			</nav>
@@ -33,7 +33,7 @@
                   In this system, Machine Learning (ML) algorithms play an important role when predicting heart disease
                   such as Random Forest, Gradient Boosting, Decision Tree, SVM, KNeartestNeigbor, GaussianNB and LogisticRegression.
                 </p>
-                <a href="{{ url_for('predict_page') }}">Predict Now</a>
+                <a href="{{ url_for('predict_page',email = email) }}">Predict Now</a>
               </div>
             </div>
 

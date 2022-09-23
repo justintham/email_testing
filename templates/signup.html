@@ -186,6 +186,15 @@
       cursor: pointer;
       color: white;
   }
+
+  .confirm_psw-show .show-hide-icon2
+  {
+      position: absolute;
+      right: 10px;
+      top: 38px;
+      cursor: pointer;
+      color: white;
+  }
         </style>
     </head>
     <body>
@@ -205,9 +214,19 @@
                           <div class="show-hide-icon">
                               <i class="fa fa-eye"></i>
                           </div>
-                          <label for="confirm_psw" style="color:white"><b>Confirm Password</b></label>
-                        <input type="text" placeholder="Confirm Your Password" name="confirm_psw" id="confirm_psw" required>
                         </div>
+
+                        <div style="position: relative;" class="confirm_psw-show">
+                          <label for="confirm_psw" style="color:white"><b>Confirm Password</b></label>
+                          <input type="password" placeholder="Confirm Your Password" name="confirm_psw" id="confirm_psw" required>
+                            <div class="show-hide-icon2">
+                              <i class="fa fa-eye"></i>
+                          </div>
+                        </div>
+
+
+
+
                       <div>
                           <a href="{{ url_for('login') }}" style="color: white;">Already have a user? Sign in now</a>
                         </div>
@@ -303,6 +322,20 @@
 
             });
           });
+
+          $(document).ready(function(){
+            $(".confirm_psw-show .show-hide-icon2").click(function(){
+
+              $(this).find(".fa").toggleClass("fa-eye-slash fa-eye");
+
+              $(this).parents(".confirm_psw-show").toggleClass("show");
+
+              $(".confirm_psw-show input").attr("type","password");
+              $(".confirm_psw-show.show input").attr("type","text");
+
+
+            });
+          });
           </script>
     </body>
 
@@ -339,45 +372,57 @@
   const database = getDatabase(app);
 
   submitData.addEventListener('click', (e) => {
-
       var email = document.getElementById('email').value;
       var password = document.getElementById('psw').value;
       var confirm_password = document.getElementById('confirm_psw').value;
-      
-      if (password == confirm_password){
-      //sign up user
-      createUserWithEmailAndPassword(auth, email, password)
-          .then((userCredential) => {
-              // Signed in
-              const user = userCredential.user;
-              // ... user.uid
-              set(ref(database, 'users/' + user.uid), {
-                  email: window.btoa(email),
-                  password: window.btoa(password)
-              })
-                  .then(() => {
-                      // Data saved successfully!
-                      alert('User created successfully');
-                      window.location.href = "{{ url_for('login') }}";
-                  })
-                  .catch((error) => {
-                      // The write failed...
-                      let signUp_error = "Email has been registered!"
-                      alert(signUp_error);
-                  });
-          })
-          .catch((error) => {
-              const errorCode = error.code;
-              const errorMessage = error.message;
-              let signUp_error = "Invalid Email or Password!! Please try again"
-              alert(signUp_error);
-              // ..
-              alert(signUp_error);
-          });
+      var lowerCaseLetters = /[a-z]/g;
+      var upperCaseLetters = /[A-Z]/g;
+      var numbers = /[0-9]/g;
+      var reg = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
 
+
+      if (password == confirm_password){
+        //sign up user
+        if (password.match(lowerCaseLetters)&& password.match(upperCaseLetters)&&password.match(numbers)&& password.length >= 8){
+          createUserWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                // Signed in
+                const user = userCredential.user;
+                // ... user.uid
+                set(ref(database, 'users/' + user.uid), {
+                    email: window.btoa(email),
+                    password: window.btoa(password)
+                })
+                    .then(() => {
+                        // Data saved successfully!
+                        alert('User created successfully');
+                        window.location.href = "{{ url_for('login') }}";
+                    })
+                    .catch((error) => {
+                        // The write failed...
+                        let signUp_error = "Email has been registered!"
+                        alert(signUp_error);
+                    });
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                let signUp_error = "Invalid Email or Password!! Please try again"
+                alert(signUp_error);
+                // ..
+                alert(signUp_error);
+            });
+
+        }
+        else{
+          alert("Password is not fulfilled requirements. Please Try Again")
+          window.location.href = "{{ url_for('signup') }}";
+
+        }
       }
       else{
         alert("Password are not same. Please Try Again")
+        window.location.href = "{{ url_for('signup') }}";
       }
 
   });

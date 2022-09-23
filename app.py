@@ -140,7 +140,7 @@ def critical_email(email):
                                     <td class="critical notification">
                                         <h1><span class="icon"><img class="icon image-contain" src="https://th.bing.com/th/id/OIP.OJ618FjGfv4ZkHmrWy44nQHaHa?w=204&h=204&c=7&r=0&o=5&dpr=1.5&pid=1.7" width="230" height="230" ></span>Healthy</h1>
                                         <p>The "Heart Disease Prediction System" has predicted you have Heart Disease</p>
-                                        <p class="small" ><a href=""http://127.0.0.1:5000/>Do you want to predict again?</a></p>
+                                        <p class="small" ><a href="http://test-heartdisease/">Do you want to predict again?</a></p>
                                     </td>
                                 </tr>
                                 <!-- End: Healthy Notification -->
@@ -252,7 +252,7 @@ def healthy_email(email):
                                     <td class="healthy notification">
                                         <h1><span class="icon"><img class="icon image-contain" src="https://www.bing.com/th?id=OIP.uook2b6YTHNIbrRyvPXnPAHaHy&w=161&h=170&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2" width="230" height="230" ></span>Healthy</h1>
                                         <p>The "Heart Disease Prediction System" has predicted you don't have Heart Disease</p>
-                                        <p class="small" ><a href=""http://127.0.0.1:5000/>Do you want to predict again?</a></p>
+                                        <p class="small" ><a href="http://test-heartdisease/">Do you want to predict again?</a></p>
                                     </td>
                                 </tr>
                                 <!-- End: Healthy Notification -->

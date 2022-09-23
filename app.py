@@ -31,15 +31,6 @@ def get_algorithm(x):
         model = pickle.load(open('algorithm/model_gnb.pkl', 'rb'))
     return model
 
-def send_email(email):
-    message = Mail(
-        from_email='hesheitaliabu@gmail.com',
-        to_emails=email,
-        subject='testing 123',
-        html_content='<strong>testing 123</strong>')
-    Sg = sendgrid.SendGridAPIClient(api_key=os.environ.get('MyAPI'))
-    Sg.send(message)
-
 def critical_email(email):
     message = Mail(
         from_email='hesheitaliabu@gmail.com',

@@ -35,7 +35,7 @@ def critical_email(email):
     message = Mail(
         from_email='hesheitaliabu@gmail.com',
         to_emails=email,
-        subject='HEY BABYYYYYYYYYYYYYYYYYYY',
+        subject=f"""<b>Heart Disease Prediction System</b>""",
         html_content=f"""
             <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
             <html xmlns="http://www.w3.org/1999/xhtml">
@@ -129,7 +129,7 @@ def critical_email(email):
                                 <!-- Start: Healthy Notification -->
                                 <tr>
                                     <td class="critical notification">
-                                        <h1><span class="icon"><img class="icon image-contain" src="https://th.bing.com/th/id/OIP.OJ618FjGfv4ZkHmrWy44nQHaHa?w=204&h=204&c=7&r=0&o=5&dpr=1.5&pid=1.7" width="230" height="230" ></span>Healthy</h1>
+                                        <h1><span class="icon"><img class="icon image-contain" src="https://th.bing.com/th/id/OIP.OJ618FjGfv4ZkHmrWy44nQHaHa?w=204&h=204&c=7&r=0&o=5&dpr=1.5&pid=1.7" width="230" height="230" ></span><b>ALERT</b></h1>
                                         <p>The "Heart Disease Prediction System" has predicted you have Heart Disease</p>
                                         <p class="small" ><a href="http://test-heartdisease/">Do you want to predict again?</a></p>
                                     </td>
@@ -150,7 +150,7 @@ def healthy_email(email):
     message = Mail(
         from_email='hesheitaliabu@gmail.com',
         to_emails=email,
-        subject='HEY BABYYYYYYYYYYYYYYYYYYY',
+        subject=f"""<b>Heart Disease Prediction System</b>""",
         html_content=f"""
             <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
             <html xmlns="http://www.w3.org/1999/xhtml">

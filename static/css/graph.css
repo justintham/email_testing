@@ -25,9 +25,21 @@ nav{
   justify-content: space-between;
 }
 .logo{
-  width: 140px;
-  color: white;
+  color:#663399;
+  font-size:25px;
+  font-family:verdana;
+  text-align:left;
+  margin-top:10px;
+  float:left;
+  margin-top: 0;
+  margin-bottom: 3vh;
+  margin-left: 0%;
+  margin-right: 16vw;
+  line-height:50px;
+  padding-left:0;
+  text-decoration: none;
 }
+
 .nav-links{
   padding: 28px 0;
 }

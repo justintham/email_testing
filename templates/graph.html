@@ -12,12 +12,13 @@
       margin-right: auto;
       width: 90%;
     }
+    
   </style>
   </head>
   <body>
     <div class="header">
       <nav>
-			  <span class="logo"><a href="{{ url_for('predict_page',email = email) }}">Heart Disease Test</a></span>
+				<a href="{{ url_for('predict_page',email = email) }}"><span class="logo">HD Prediction</span></a>
 			  <ul class="nav-links">
 				<li><a href="{{url_for('about_us',email = email) }}">About Us</a></li>
 				<li><a href="{{ url_for('graph_page',email = email) }}">Graph</a></li>
